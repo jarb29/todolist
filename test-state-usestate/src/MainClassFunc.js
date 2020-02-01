@@ -4,7 +4,7 @@ const MainClassFunc = props => {
     const [contador, setContador] = useState(0);
     const [name, setName] = useState('');
 
-    const [state, setState] = useState({ contador: 0, tareas: [] });
+    const [state, setState] = useState({ tareas: [] });
 
     function cambiarValor() {
         setContador(contador + 1)
@@ -19,7 +19,7 @@ const MainClassFunc = props => {
             let newState = Object.assign({}, state);
             newState.tareas.push(e.target.value);
             setState(newState);
-            e.target.value='';
+            
         }
 
     }

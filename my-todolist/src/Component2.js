@@ -4,6 +4,12 @@ const MainClassFunc = props => {
 
 
     const [state, setState] = useState({ contador: 0, tareas: [] });
+    const [contador, setContador] = useState(0);
+
+
+
+
+    
 
 
 
@@ -12,6 +18,8 @@ const MainClassFunc = props => {
             let newState = Object.assign({}, state);
             newState.tareas.push(e.target.value);
             setState(newState);
+            setContador(contador+1);
+
             e.target.value='';
         }
     }
@@ -19,6 +27,7 @@ const MainClassFunc = props => {
     const deleteTask = (e) => {
         let newState = Object.assign({}, state);
         newState.tareas.splice(e, 1);
+        setContador(contador-1);
         setState(newState);
     }
 
@@ -46,6 +55,10 @@ const MainClassFunc = props => {
                         )
                 }
             </ul>
+
+            <br />
+            <p>{contador} Items left!</p>
+            <br />
         </>
     )
 }
